@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    background: rgb(61,101,133);
+    background: radial-gradient(circle, rgba(61,101,133,1) 0%, rgba(255,250,240,1) 100%);
+    color: white;
+    padding-bottom: 10%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body.loaded {
+    transform: translateX(0);
+}
+
+body.slide-out-right {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+body.slide-out-left {
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+    transition: all 0.3s ease-in-out;
+    align-items: stretch;
+}
+
+.member-card {
+    background: #3D6585;
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    min-height: 400px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .member-card:not(.active) {
+    opacity: 1; 
+}
+
+.member-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.member-info {
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.extra-info {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.member-card.active {
+    width: 320px;
+    min-height: 500px;
+    background:#0d243d;
+    top: auto;
+    bottom: auto;
+}
+
+.member-card.active .extra-info {
+    visibility: visible;
+    opacity: 1;
+    max-height: 200px;
+}
+
+.container .member-card:not(.active) {
+    width: 250px;
+    height: 270px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+h1 {
+    color: floralwhite;
+    font-size: 42px;
+}
+
+h3 {
+    color: floralwhite;
+}
+
+ .role {
+    color: #e1fdff;
+ }
